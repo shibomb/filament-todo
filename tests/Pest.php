@@ -1,0 +1,6 @@
+<?php
+
+
+use Shibomb\FilamentTodo\Tests\TestCase;
+
+uses(TestCase::class)->in(__DIR__);

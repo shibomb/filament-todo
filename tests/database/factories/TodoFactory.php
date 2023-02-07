@@ -16,7 +16,7 @@ class TodoFactory extends Factory
     {
         return [
             'title' => $title = $this->faker->unique()->sentence(4),
-            'category_id' => $this->faker->numberBetween(0, 9),
+            'todo_category_id' => $this->faker->numberBetween(0, 9),
             'content' => $this->faker->realText(),
             'published_at' => $this->faker->dateTimeBetween('-6 month', '+1 month'),
             'is_finished' => $this->faker->numberBetween(0, 1),

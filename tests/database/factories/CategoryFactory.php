@@ -17,6 +17,7 @@ class CategoryFactory extends Factory
         return [
             'name' => $name = $this->faker->unique()->words(3, true),
             'color' => '#ff0000',
+            'sort_order' => $this->faker->numberBetween(0, 999999),
             'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
             'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
         ];

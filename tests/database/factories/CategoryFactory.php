@@ -17,9 +17,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $name = $this->faker->unique()->words(3, true),
-            'slug' => Str::slug($name),
-            'description' => $this->faker->realText(),
-            'is_visible' => $this->faker->boolean(),
+            'color' => '#ff0000',
             'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
             'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
         ];

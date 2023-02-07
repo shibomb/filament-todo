@@ -3,14 +3,14 @@
 namespace Shibomb\FilamentTodo\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Shibomb\FilamentTodo\Models\Post;
+use Shibomb\FilamentTodo\Models\Todo;
 
 class TodoFactory extends Factory
 {
     /**
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = Todo::class;
 
     public function definition(): array
     {

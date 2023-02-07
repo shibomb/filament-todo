@@ -18,7 +18,7 @@ jobs:
         stability: [prefer-stable]
         include:
           - laravel: 9.*
-            testbench: ^7.0
+            testbench: 7.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -44,4 +44,4 @@ jobs:
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
-        run: vendor/bin/testbench package:test
+        run: vendor/bin/pest

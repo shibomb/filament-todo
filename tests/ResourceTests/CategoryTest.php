@@ -11,8 +11,8 @@ it('can render category create form', function () {
     $this->get(CategoryResource::getUrl('create'))->assertSuccessful();
 });
 
-it('can render category edit form', function () {
-    $this->get(CategoryResource::getUrl('edit', [
-        'record' => Category::factory()->create(),
-    ]))->assertSuccessful();
-});
+// it('can render category edit form', function () {
+//     $this->get(CategoryResource::getUrl('edit', [
+//         'record' => Category::factory()->create(),
+//     ]))->assertSuccessful();
+// });

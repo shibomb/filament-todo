@@ -19,7 +19,7 @@ use Shibomb\FilamentTodo\TodoServiceProvider;
 
 class TestCase extends Orchestra
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
     use WithFaker;
 
     protected function setUp(): void
@@ -51,14 +51,8 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('auth.providers.users.model', User::class);
+        config()->set('database.default', 'testing');
         config()->set('app.key', 'base64:EWcFBKBT8lKlGK8nQhTHY+wg19QlfmbhtO9Qnn3NfcA=');
-
-        config()->set('database.default', 'testbench');
-        config()->set('database.connections.testbench', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
 
         $migration = include __DIR__ . '/../database/migrations/create_filament_todo_tables.php.stub';
         $migration->up();

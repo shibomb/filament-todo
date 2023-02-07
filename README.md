@@ -76,14 +76,6 @@ $category->color;
 $category->sort_order;
 ```
 
-## More Screenshots
-
-![](./art/screen2.png)
-
----
-
-![](./art/screen3.png)
-
 ## Testing
 
 ```bash

@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^8.0|^8.1",
-        "shibomb/filament-multi-components-column": "*",
+        "shibomb/filament-multi-components-column": "^1.0.0",
         "spatie/laravel-package-tools": "^1.9.2",
         "filament/filament": "^2.0",
         "illuminate/contracts": "^8.0|^9.0"

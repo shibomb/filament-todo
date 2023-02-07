@@ -3,7 +3,6 @@
 namespace Shibomb\FilamentTodo\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use Shibomb\FilamentTodo\Models\Post;
 
 class TodoFactory extends Factory

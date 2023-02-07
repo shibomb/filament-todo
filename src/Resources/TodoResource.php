@@ -9,9 +9,10 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Shibomb\FilamentMultiComponentsColumn\Components\MultiComponentsColumn;
 
 use function now;
+
+use Shibomb\FilamentMultiComponentsColumn\Components\MultiComponentsColumn;
 
 use Shibomb\FilamentTodo\Models\Todo;
 use Shibomb\FilamentTodo\Resources\TodoResource\Pages;
@@ -78,7 +79,7 @@ class TodoResource extends Resource
                             ]),
 
                         Forms\Components\Toggle::make('is_finished')
-                            ->label(__('filament-todo::filament-todo.is_finished'))
+                            ->label(__('filament-todo::filament-todo.is_finished')),
                     ])
                     ->columns([
                         'sm' => 1,
@@ -118,7 +119,7 @@ class TodoResource extends Resource
                     ->sortable()
                     ->components([
                         Tables\Columns\ColorColumn::make('category.color'),
-                        Tables\Columns\TextColumn::make('category.name')
+                        Tables\Columns\TextColumn::make('category.name'),
                     ]),
                 Tables\Columns\TextColumn::make('published_at')
                     ->label(__('filament-todo::filament-todo.published_at'))

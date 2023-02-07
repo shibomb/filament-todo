@@ -12,8 +12,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Shibomb\FilamentTodo\TodoServiceProvider;
 use Shibomb\FilamentTodo\Tests\Models\User;
+use Shibomb\FilamentTodo\TodoServiceProvider;
 
 class TestCase extends Orchestra
 {

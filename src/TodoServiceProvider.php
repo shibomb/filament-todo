@@ -3,10 +3,10 @@
 namespace Shibomb\FilamentTodo;
 
 use Filament\PluginServiceProvider;
-use Spatie\LaravelPackageTools\Package;
 use Shibomb\FilamentTodo\Commands\InstallCommand;
 use Shibomb\FilamentTodo\Resources\CategoryResource;
 use Shibomb\FilamentTodo\Resources\TodoResource;
+use Spatie\LaravelPackageTools\Package;
 
 class TodoServiceProvider extends PluginServiceProvider
 {

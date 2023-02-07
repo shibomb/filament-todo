@@ -42,7 +42,7 @@ class CategoryResource extends Resource
                             ->required()
                             ->numeric()
                             ->minValue(0)
-                            ->maxValue(1000000)
+                            ->maxValue(1000000),
                     ]),
             ]);
     }
@@ -57,7 +57,7 @@ class CategoryResource extends Resource
                     ->sortable()
                     ->components([
                         Tables\Columns\ColorColumn::make('color'),
-                        Tables\Columns\TextColumn::make('name')
+                        Tables\Columns\TextColumn::make('name'),
                     ]),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->label(__('filament-todo::filament-todo.sort_order'))

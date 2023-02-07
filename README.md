@@ -39,16 +39,16 @@ php artisan migrate
 
 Filment todo builder is faceless, it doesn't have any opinions on how you display your content in your frontend. You can use the todo models in your controllers to display the different resources:
 
--   `Shibomb\FilamentTodo\Models\Todo`
--   `Shibomb\FilamentTodo\Models\Category`
+- `Shibomb\FilamentTodo\Models\Todo`
+- `Shibomb\FilamentTodo\Models\Category`
 
-### Todos & Drafts
+### Todos
 
 ```php
 $todos = Todo::published()->get();
-
-$drafts = Todo::draft()->get();
-
+$todos = Todo::draft()->get();
+$todos = Todo::finished()->get();
+$todos = Todo::unfinished()->get();
 ```
 
 ### Todo Content
@@ -60,7 +60,7 @@ $todo->id;
 $todo->title;
 $todo->content;
 $todo->published_at;
-$todo->finished_at;
+$todo->is_finished;
 ```
 
 ### Todo Category
@@ -72,43 +72,8 @@ $category = $todo->category;
 
 $category->id;
 $category->name;
-```
-
-### Configurations
-
-This is the contents of the published config file:
-
-```php
-<?php
-
-return [
-
-    /**
-     * Supported content editors: richtext & markdown:
-     *      \Filament\Forms\Components\RichEditor::class
-     *      \Filament\Forms\Components\MarkdownEditor::class
-     */
-    'editor'  => \Filament\Forms\Components\RichEditor::class,
-
-    /**
-     * Buttons for text editor toolbar.
-     */
-    'toolbar_buttons' => [
-        'attachFiles',
-        'blockquote',
-        'bold',
-        'bulletList',
-        'codeBlock',
-        'h2',
-        'h3',
-        'italic',
-        'link',
-        'orderedList',
-        'redo',
-        'strike',
-        'undo',
-    ],
-];
+$category->color;
+$category->sort_order;
 ```
 
 ## More Screenshots
@@ -139,8 +104,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [shibomb](https://github.com/shibomb)
--   [All Contributors](../../contributors)
+- [shibomb](https://github.com/shibomb)
+- [All Contributors](../../contributors)
 
 ## License
 

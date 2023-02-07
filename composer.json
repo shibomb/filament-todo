@@ -1,0 +1,64 @@
+{
+    "name": "shibomb/filament-todo",
+    "description": "Filament Todo",
+    "keywords": [
+        "shibomb",
+        "laravel",
+        "filament-todo",
+        "todo"
+    ],
+    "homepage": "https://github.com/shibomb/filament-todo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shibomb",
+            "email": "shibomb@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "shibomb/filament-multi-components-column": "*",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "filament/filament": "^2.0",
+        "illuminate/contracts": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.10|^6.1",
+        "orchestra/testbench": "^6.23|^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.0|^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shibomb\\FilamentTodo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shibomb\\FilamentTodo\\Tests\\": "tests",
+            "Shibomb\\FilamentTodo\\Tests\\Database\\Factories\\": "tests/database/factories"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shibomb\\FilamentTodo\\TodoServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

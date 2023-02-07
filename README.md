@@ -1,7 +1,8 @@
 # Filament Todo
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shibomb/filament-todo.svg?style=flat-square)](https://packagist.org/packages/shibomb/filament-todo)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/shibomb/filament-todo/Check%20&%20fix%20styling?label=code%20style)](https://github.com/shibomb/filament-todo/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/shibomb/filament-todo/run-tests.yml?branch=master&style=flat-square)](https://github.com/shibomb/filament-todo/actions/workflows/run-tests.yml?query=branch%3Amain++)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/shibomb/filament-todo/php-cs-fixer.yml?branch=master&style=flat-square)](https://github.com/shibomb/filament-todo/actions/workflows/php-cs-fixer.yml?query=branch%3Amain++)
 [![Total Downloads](https://img.shields.io/packagist/dt/shibomb/filament-todo.svg?style=flat-square)](https://packagist.org/packages/shibomb/filament-todo)
 
 A faceless todo content manager with configurable richtext and markdown support for filament admin panel.
@@ -38,8 +39,8 @@ php artisan migrate
 
 Filment todo builder is faceless, it doesn't have any opinions on how you display your content in your frontend. You can use the todo models in your controllers to display the different resources:
 
-- `Shibomb\FilamentTodo\Models\Todo`
-- `Shibomb\FilamentTodo\Models\Category`
+-   `Shibomb\FilamentTodo\Models\Todo`
+-   `Shibomb\FilamentTodo\Models\Category`
 
 ### Todos
 
@@ -95,8 +96,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [shibomb](https://github.com/shibomb)
-- [All Contributors](../../contributors)
+-   [shibomb](https://github.com/shibomb)
+-   [All Contributors](../../contributors)
 
 ## License
 

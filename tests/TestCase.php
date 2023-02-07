@@ -59,6 +59,9 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
+
+        $migration = include __DIR__ . '/../database/migrations/create_filament_todo_tables.php.stub';
+        $migration->up();
     }
 
     protected function defineDatabaseMigrations()

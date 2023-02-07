@@ -51,8 +51,14 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('auth.providers.users.model', User::class);
-        config()->set('database.default', 'testing');
         config()->set('app.key', 'base64:EWcFBKBT8lKlGK8nQhTHY+wg19QlfmbhtO9Qnn3NfcA=');
+
+        config()->set('database.default', 'testbench');
+        config()->set('database.connections.testbench', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
     }
 
     protected function defineDatabaseMigrations()

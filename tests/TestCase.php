@@ -48,7 +48,7 @@ class TestCase extends Orchestra
     {
         config()->set('auth.providers.users.model', User::class);
         config()->set('database.default', 'testing');
-        config()->set('app.key', 'base64:m+K5CNQUxcdVERb/m4xT5mXMRWuEfGVnQPMqg9eLBB8=');
+        config()->set('app.key', 'base64:EWcFBKBT8lKlGK8nQhTHY+wg19QlfmbhtO9Qnn3NfcA=');
     }
 
     protected function defineDatabaseMigrations()

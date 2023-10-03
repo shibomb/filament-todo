@@ -22,6 +22,7 @@ return [
         'category' => [
             'label' => 'Categories',
             'single' => 'Category',
+
             'name' => 'Name',
             'color' => 'Color',
             'sort_order' => 'Sort Order',
@@ -35,25 +36,24 @@ return [
             'image' => 'Image',
             'published_at' => 'Published at',
             'is_finished' => 'Finished',
-
-            'unfinished_only' => 'Unfinished only',
-            'published_until' => 'Published until',
         ],
     ],
+    'help' => [
+        'todo' => [
+            'list' => [
+                'filter' => [
+                    'unfinished_only' => 'Unfinished only',
+                    'published_until' => 'Published until',
+                ]
+            ],
+            'form' => [
+                // 'title' => 'Todo',
+                // 'description' => 'Description',
+                'status' => 'Status'
+            ],
+            'is_finished' => [
+                'helper' => 'Check when <strong>finished.<strong>'
+            ]
+        ]
+    ]
 ];
-
-// 'title' => 'Title',
-// 'created_at' => 'Created at',
-// 'last_modified_at' => 'Last modified at',
-// 'published_at' => 'Published at',
-// 'todos' => 'Todos',
-// 'todo' => 'Todo',
-// 'content' => 'Content',
-// 'is_finished' => 'Is Finished',
-// 'published_until' => 'Published until',
-// 'unfinished_only' => 'Unfinished only',
-// 'categories' => 'Categories',
-// 'category' => 'Category',
-// 'category_name' => 'Category name',
-// 'color' => 'Color',
-// 'sort_order' => 'Sort order',

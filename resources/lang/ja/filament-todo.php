@@ -36,25 +36,24 @@ return [
             'image' => 'イメージ',
             'published_at' => '公開日',
             'is_finished' => '完了',
-
-            'unfinished_only' => '未完了のみ',
-            'published_until' => '公開日が以前',
         ],
     ],
+    'help' => [
+        'todo' => [
+            'list' => [
+                'filter' => [
+                    'unfinished_only' => '未完了のみ',
+                    'published_until' => '公開日が以前',
+                ]
+            ],
+            'form' => [
+                'title' => 'Todo',
+                'description' => 'Description',
+                'status' => 'Status',
+                'is_finished' => [
+                    'helper' => 'Check when <strong>finished.<strong>'
+                ]
+            ],
+        ]
+    ]
 ];
-
-// 'title' => 'タイトル',
-// 'created_at' => '作成日時',
-// 'last_modified_at' => '最終更新日時',
-// 'published_at' => '公開日',
-// 'todos' => 'Todos',
-// 'todo' => 'ToDo',
-// 'content' => 'コンテンツ',
-// 'is_finished' => '完了',
-// 'published_until' => '公開済',
-// 'unfinished_only' => '未完了のみ',
-// 'categories' => 'カテゴリー',
-// 'category' => 'カテゴリー',
-// 'category_name' => 'カテゴリー名',
-// 'color' => '色',
-// 'sort_order' => '表示順',

@@ -3,6 +3,8 @@
 namespace Shibomb\FilamentTodo\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -49,20 +51,14 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Card::make()
+                Card::make()->columns(2)
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->label(__('filament-todo::filament-todo.resource.category.name'))
-                            ->required(),
-                        Forms\Components\ColorPicker::make('color')
-                            ->label(__('filament-todo::filament-todo.resource.category.color'))
-                            ->required(),
-                        Forms\Components\TextInput::make('sort_order')
-                            ->label(__('filament-todo::filament-todo.resource.category.sort_order'))
                             ->required()
-                            ->numeric()
-                            ->minValue(0)
-                            ->maxValue(1000000),
+                            ->columnSpan('full'),
+                        Forms\Components\ColorPicker::make('color')->label(__('filament-todo::filament-todo.resource.category.color'))->required(),
+                        Forms\Components\TextInput::make('sort_order')->label(__('filament-todo::filament-todo.resource.category.sort_order'))->required()->numeric()->minValue(0)->maxValue(1000000),
                     ]),
             ]);
     }
@@ -100,7 +96,7 @@ class CategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\TodosRelationManager::class,
+            // RelationManagers\TodosRelationManager::class,
         ];
     }
 

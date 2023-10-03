@@ -3,11 +3,16 @@
 namespace Shibomb\FilamentTodo\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\HtmlString;
 use Shibomb\FilamentTodo\Models\Todo;
 use Shibomb\FilamentTodo\Resources\TodoResource\Pages;
 
@@ -49,41 +54,56 @@ class TodoResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('filament_todo_category_id')
-                    ->label(trans('filament-todo::filament-todo.resource.category.single'))
-                    ->relationship(name: 'category', titleAttribute: 'name'),
-                Forms\Components\TextInput::make('title')
-                    ->label(trans('filament-todo::filament-todo.resource.todo.title'))
-                    ->required(),
-                Forms\Components\RichEditor::make('content')
-                    ->label(trans('filament-todo::filament-todo.resource.todo.content'))
-                    ->required(),
-                Forms\Components\FileUpload::make('image')
-                    ->label(trans('filament-todo::filament-todo.resource.todo.image'))
-                    ->disk('public') // 'local', 'public', 's3'
-                    ->directory('filament-todo-images') //'private/filament-todo-images')
-                    ->visibility('public')
-                    ->image()
-                    ->imagePreviewHeight('250')
-                    // ->imageResizeMode('cover')
-                    // ->imageCropAspectRatio('16:9')
-                    // ->imageResizeTargetWidth('1920')
-                    // ->imageResizeTargetHeight('1080')
-                    ->imageEditor()
-                    // ->imageEditorMode(1)
-                    // ->imageEditorViewportWidth('1920')
-                    // ->imageEditorViewportHeight('1080')
-                    ->imageEditorAspectRatios([
-                        null,
-                        '1:1',
-                        '4:3',
-                        '16:9',
+                // Placeholder::make('Description')
+                //     ->disableLabel(true)
+                //     ->label(trans('filament-todo::filament-todo.help.todo.form.title'))
+                //     ->content(new HtmlString(trans('filament-todo::filament-todo.help.todo.form.description'))),
+                Card::make()->columns(2)
+                    ->schema([
+                        Forms\Components\Select::make('filament_todo_category_id')
+                            ->label(trans('filament-todo::filament-todo.resource.category.single'))
+                            ->relationship(name: 'category', titleAttribute: 'name')
+                            ->required()
+                            ->columnSpan('full'),
+                        Forms\Components\TextInput::make('title')
+                            ->label(trans('filament-todo::filament-todo.resource.todo.title'))
+                            ->required()
+                            ->columnSpan('full'),
+                        Forms\Components\RichEditor::make('content')
+                            ->label(trans('filament-todo::filament-todo.resource.todo.content'))
+                            ->required(),
+                        Forms\Components\FileUpload::make('image')
+                            ->label(trans('filament-todo::filament-todo.resource.todo.image'))
+                            ->disk('public') // 'local', 'public', 's3'
+                            ->directory('filament-todo-images') //'private/filament-todo-images')
+                            ->visibility('public')
+                            ->image()
+                            ->imagePreviewHeight('250')
+                            // ->imageResizeMode('cover')
+                            // ->imageCropAspectRatio('16:9')
+                            // ->imageResizeTargetWidth('1920')
+                            // ->imageResizeTargetHeight('1080')
+                            ->imageEditor()
+                            // ->imageEditorMode(1)
+                            // ->imageEditorViewportWidth('1920')
+                            // ->imageEditorViewportHeight('1080')
+                            ->imageEditorAspectRatios([
+                                null,
+                                '1:1',
+                                '4:3',
+                                '16:9',
+                            ]),
+                        Section::make(trans('filament-todo::filament-todo.help.todo.form.status'))->columns(2)
+                            ->label(trans('filament-todo::filament-todo.resource.todo.content'))
+                            ->schema([
+                                Forms\Components\DatePicker::make('published_at')
+                                    ->label(trans('filament-todo::filament-todo.resource.todo.published_at'))
+                                    ->format('Y/m/d'),
+                                Forms\Components\Toggle::make('is_finished')
+                                    ->label(trans('filament-todo::filament-todo.resource.todo.is_finished'))
+                                    ->helperText(new HtmlString(trans('filament-todo::filament-todo.help.todo.form.is_finished.helper'))),
+                            ])
                     ]),
-                Forms\Components\DatePicker::make('published_at')
-                    ->label(trans('filament-todo::filament-todo.resource.todo.published_at'))
-                    ->format('Y/m/d'),
-                Forms\Components\Toggle::make('is_finished')
-                    ->label(trans('filament-todo::filament-todo.resource.todo.is_finished')),
             ]);
     }
 
@@ -118,13 +138,13 @@ class TodoResource extends Resource
             ])
             ->filters([
                 Tables\Filters\Filter::make('unfinished_only')
-                    ->label(__('filament-todo::filament-todo.resource.todo.unfinished_only'))
-                    ->query(fn (Builder $query): Builder => $query->where('is_finished', false))
+                    ->label(__('filament-todo::filament-todo.help.todo.list.filter.unfinished_only'))
+                    ->query(fn(Builder $query): Builder => $query->where('is_finished', false))
                     ->default(true),
                 Tables\Filters\Filter::make('published')
                     ->form([
                         Forms\Components\DatePicker::make('published_until')
-                            ->label(__('filament-todo::filament-todo.resource.todo.published_until'))
+                            ->label(__('filament-todo::filament-todo.help.todo.list.filter.published_until'))
                             ->displayFormat('Y-m-d')
                             ->default(now()),
                     ])
@@ -132,7 +152,7 @@ class TodoResource extends Resource
                         return $query
                             ->when(
                                 $data['published_until'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
+                                fn(Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
                             );
                     }),
 

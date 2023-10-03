@@ -11,7 +11,7 @@ return [
         'single' => 'To Do',
         'title' => 'Title',
         'content' => 'Content',
-    ]
+    ],
 ];
 
 // 'title' => 'Title',

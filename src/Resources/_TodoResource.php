@@ -9,13 +9,11 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-
-use function now;
-
 use Shibomb\FilamentMultiComponentsColumn\Components\MultiComponentsColumn;
-
 use Shibomb\FilamentTodo\Models\Todo;
 use Shibomb\FilamentTodo\Resources\TodoResource\Pages;
+
+use function now;
 
 class TodoResource extends Resource
 {

@@ -2,9 +2,9 @@
 
 namespace Shibomb\FilamentTodo;
 
-use Shibomb\FilamentTodo\Resources\TodoResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Shibomb\FilamentTodo\Resources\TodoResource;
 
 class FilamentTodoPlugin implements Plugin
 {

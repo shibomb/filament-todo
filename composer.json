@@ -1,15 +1,15 @@
 {
-    "name": "shibomb/filament-simple-memo",
-    "description": "This is my package filament-simple-memo",
+    "name": "shibomb/filament-todo",
+    "description": "This is my package filament-todo",
     "keywords": [
         "shibomb",
         "laravel",
-        "filament-simple-memo"
+        "filament-todo"
     ],
-    "homepage": "https://github.com/shibomb/filament-simple-memo",
+    "homepage": "https://github.com/shibomb/filament-todo",
     "support": {
-        "issues": "https://github.com/shibomb/filament-simple-memo/issues",
-        "source": "https://github.com/shibomb/filament-simple-memo"
+        "issues": "https://github.com/shibomb/filament-todo/issues",
+        "source": "https://github.com/shibomb/filament-todo"
     },
     "license": "MIT",
     "authors": [

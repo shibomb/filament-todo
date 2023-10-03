@@ -4,13 +4,13 @@
 return [
     'navigation' => [
         'group' => 'ドキュメント',
-        'label' => 'シンプルメモ',
+        'label' => 'To Do',
     ],
     'resource' => [
-        'label' => 'シンプルメモ',
-        'single' => 'シンプルメモ',
+        'label' => 'To Do',
+        'single' => 'To Do',
         'title' => 'タイトル',
-        'body' => '本文',
+        'content' => 'コンテンツ',
     ],
 ];
 

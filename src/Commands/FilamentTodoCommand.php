@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class FilamentTodoCommand extends Command
 {
-    public $signature = 'filament-simple-memo';
+    public $signature = 'filament-todo';
 
     public $description = 'My command';
 

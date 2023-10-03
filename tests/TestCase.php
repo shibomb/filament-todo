@@ -57,7 +57,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_filament-simple-memo_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_filament-todo_table.php.stub';
         $migration->up();
         */
     }

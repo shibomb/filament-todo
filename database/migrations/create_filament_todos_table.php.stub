@@ -37,7 +37,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filament_simple_todos');
-        Schema::dropIfExists('filament_simple_todo_categories');
+        Schema::dropIfExists('filament_todo_todos');
+        Schema::dropIfExists('filament_todo_categories');
     }
 };

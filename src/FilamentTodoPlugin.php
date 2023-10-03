@@ -10,7 +10,7 @@ class FilamentTodoPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'filament-simple-memo';
+        return 'filament-todo';
     }
 
     public function register(Panel $panel): void

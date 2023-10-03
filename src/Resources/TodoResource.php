@@ -16,32 +16,32 @@ class TodoResource extends Resource
 
     public static function getPluralLabel(): string
     {
-        return trans('filament-simple-memo::simple-memo.resource.label');
+        return trans('filament-todo::todo.resource.label');
     }
 
     public static function getLabel(): string
     {
-        return trans('filament-simple-memo::simple-memo.resource.single');
+        return trans('filament-todo::todo.resource.single');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return config('filament-simple-memo.navigation.group') ? trans(config('filament-simple-memo.navigation.group')) : false;
+        return config('filament-todo.navigation.group') ? trans(config('filament-todo.navigation.group')) : false;
     }
 
     public static function getNavigationIcon(): ?string
     {
-        return config('filament-simple-memo.navigation.icon') ?? 'heroicon-o-document-text';
+        return config('filament-todo.navigation.icon') ?? 'heroicon-o-document-text';
     }
 
     public static function getNavigationLabel(): string
     {
-        return trans('filament-simple-memo::simple-memo.navigation.label');
+        return trans('filament-todo::todo.navigation.label');
     }
 
     public static function getNavigationSort(): ?int
     {
-        return config('filament-simple-memo.navigation.sort') ?? 1;
+        return config('filament-todo.navigation.sort') ?? 1;
     }
 
     public static function form(Form $form): Form
@@ -49,10 +49,10 @@ class TodoResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                    ->label(trans('filament-simple-memo::simple-memo.resource.title'))
+                    ->label(trans('filament-todo::todo.resource.title'))
                     ->required(),
                 Forms\Components\Textarea::make('body')
-                    ->label(trans('filament-simple-memo::simple-memo.resource.body'))
+                    ->label(trans('filament-todo::todo.resource.body'))
                     ->required(),
             ]);
     }
@@ -62,11 +62,11 @@ class TodoResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('filament-simple-memo::simple-memo.resource.title'))
+                    ->label(__('filament-todo::todo.resource.title'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('body')
-                    ->label(__('filament-simple-memo::simple-memo.resource.body'))
+                    ->label(__('filament-todo::todo.resource.body'))
                     ->searchable()
                     ->sortable(),
             ])

@@ -18,9 +18,9 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentTodoServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-simple-memo';
+    public static string $name = 'filament-todo';
 
-    public static string $viewNamespace = 'filament-simple-memo';
+    public static string $viewNamespace = 'filament-todo';
 
     public function configurePackage(Package $package): void
     {
@@ -36,7 +36,7 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('shibomb/filament-simple-memo');
+                    ->askToStarRepoOnGitHub('shibomb/filament-todo');
             });
 
         $configFileName = $package->shortName();
@@ -82,8 +82,8 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
         if (app()->runningInConsole()) {
             foreach (app(Filesystem::class)->files(__DIR__.'/../stubs/') as $file) {
                 $this->publishes([
-                    $file->getRealPath() => base_path("stubs/filament-simple-memo/{$file->getFilename()}"),
-                ], 'filament-simple-memo-stubs');
+                    $file->getRealPath() => base_path("stubs/filament-todo/{$file->getFilename()}"),
+                ], 'filament-todo-stubs');
             }
         }
 
@@ -93,7 +93,7 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
 
     protected function getAssetPackageName(): ?string
     {
-        return 'shibomb/filament-simple-memo';
+        return 'shibomb/filament-todo';
     }
 
     /**
@@ -102,9 +102,9 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('filament-simple-memo', __DIR__ . '/../resources/dist/components/filament-simple-memo.js'),
-            // Css::make('filament-simple-memo-styles', __DIR__ . '/../resources/dist/filament-simple-memo.css'),
-            // Js::make('filament-simple-memo-scripts', __DIR__ . '/../resources/dist/filament-simple-memo.js'),
+            // AlpineComponent::make('filament-todo', __DIR__ . '/../resources/dist/components/filament-todo.js'),
+            // Css::make('filament-todo-styles', __DIR__ . '/../resources/dist/filament-todo.css'),
+            // Js::make('filament-todo-scripts', __DIR__ . '/../resources/dist/filament-todo.js'),
         ];
     }
 
@@ -148,7 +148,7 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_simple_memos_table',
+            'create_todos_table',
         ];
     }
 }

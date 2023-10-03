@@ -4,13 +4,13 @@
 return [
     'navigation' => [
         'group' => 'Documents',
-        'label' => 'Simple Memo',
+        'label' => 'To Do',
     ],
     'resource' => [
-        'label' => 'Simple Memo',
-        'single' => 'Simple Memo',
+        'label' => 'To Do',
+        'single' => 'To Do',
         'title' => 'Title',
-        'body' => 'Body',
+        'content' => 'Content',
     ]
 ];
 

@@ -8,8 +8,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Shibomb\FilamentTodo\Enums\IsFinished;
 use Shibomb\FilamentTodo\Models\Todo;
 use Shibomb\FilamentTodo\Resources\TodoResource\Pages;
 
@@ -80,8 +78,7 @@ class TodoResource extends Resource
                         '1:1',
                         '4:3',
                         '16:9',
-                    ])
-                ,
+                    ]),
                 Forms\Components\DatePicker::make('published_at')
                     ->label(trans('filament-todo::filament-todo.resource.todo.published_at'))
                     ->format('Y/m/d'),
@@ -122,7 +119,7 @@ class TodoResource extends Resource
             ->filters([
                 Tables\Filters\Filter::make('unfinished_only')
                     ->label(__('filament-todo::filament-todo.resource.todo.unfinished_only'))
-                    ->query(fn(Builder $query): Builder => $query->where('is_finished', false))
+                    ->query(fn (Builder $query): Builder => $query->where('is_finished', false))
                     ->default(true),
                 Tables\Filters\Filter::make('published')
                     ->form([
@@ -135,7 +132,7 @@ class TodoResource extends Resource
                         return $query
                             ->when(
                                 $data['published_until'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
                             );
                     }),
 

@@ -2,9 +2,8 @@
 
 namespace Shibomb\FilamentTodo\Resources\CategoryResource\Pages;
 
-use Shibomb\FilamentTodo\Resources\CategoryResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
+use Shibomb\FilamentTodo\Resources\CategoryResource;
 
 class ViewCategory extends ViewRecord
 {

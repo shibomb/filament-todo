@@ -4,11 +4,9 @@ namespace Shibomb\FilamentTodo\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Infolists;
 use Shibomb\FilamentTodo\Models\Category;
 use Shibomb\FilamentTodo\Resources\CategoryResource\Pages;
 use Shibomb\FilamentTodo\Resources\CategoryResource\RelationManagers;

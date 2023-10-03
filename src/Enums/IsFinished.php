@@ -2,11 +2,11 @@
 
 namespace Shibomb\FilamentTodo\Enums;
 
+use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
-use Filament\Support\Contracts\HasColor;
 
-enum IsFinished: string implements HasLabel, HasColor, HasIcon
+enum IsFinished: string implements HasColor, HasIcon, HasLabel
 {
     case UNFINISHED = '0';
     case FINISHED = '1';

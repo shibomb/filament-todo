@@ -39,7 +39,7 @@ return [
 
             'unfinished_only' => '未完了のみ',
             'published_until' => '公開日が以前',
-        ]
+        ],
     ],
 ];
 

@@ -38,7 +38,7 @@ return [
 
             'unfinished_only' => 'Unfinished only',
             'published_until' => 'Published until',
-        ]
+        ],
     ],
 ];
 

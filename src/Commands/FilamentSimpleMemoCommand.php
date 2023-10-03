@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Shibomb\FilamentSimpleMemo\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentSimpleMemoCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-simple-memo';
 
     public $description = 'My command';
 

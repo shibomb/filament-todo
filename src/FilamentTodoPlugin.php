@@ -1,11 +1,12 @@
 <?php
 
-namespace Shibomb\FilamentSimpleMemo;
+namespace Shibomb\FilamentTodo;
 
+use Shibomb\FilamentTodo\Resources\TodoResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class FilamentSimpleMemoPlugin implements Plugin
+class FilamentTodoPlugin implements Plugin
 {
     public function getId(): string
     {
@@ -15,6 +16,9 @@ class FilamentSimpleMemoPlugin implements Plugin
     public function register(Panel $panel): void
     {
         //
+        $panel->resources([
+            TodoResource::class,
+        ]);
     }
 
     public function boot(Panel $panel): void

@@ -1,5 +1,5 @@
 <?php
 
-use Shibomb\FilamentSimpleMemo\Tests\TestCase;
+use Shibomb\FilamentTodo\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

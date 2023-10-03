@@ -1,13 +1,13 @@
 <?php
 
-namespace Shibomb\FilamentSimpleMemo\Testing;
+namespace Shibomb\FilamentTodo\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
 /**
  * @mixin Testable
  */
-class TestsFilamentSimpleMemo
+class TestsFilamentTodo
 {
     //
 }

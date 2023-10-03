@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Shibomb\\FilamentSimpleMemo\\": "src/",
-            "Shibomb\\FilamentSimpleMemo\\Database\\Factories\\": "database/factories/"
+            "Shibomb\\FilamentTodo\\": "src/",
+            "Shibomb\\FilamentTodo\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Shibomb\\FilamentSimpleMemo\\Tests\\": "tests/"
+            "Shibomb\\FilamentTodo\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Shibomb\\FilamentSimpleMemo\\FilamentSimpleMemoServiceProvider"
+                "Shibomb\\FilamentTodo\\FilamentTodoServiceProvider"
             ],
             "aliases": {
-                "FilamentSimpleMemo": "Shibomb\\FilamentSimpleMemo\\Facades\\FilamentSimpleMemo"
+                "FilamentTodo": "Shibomb\\FilamentTodo\\Facades\\FilamentTodo"
             }
         }
     },

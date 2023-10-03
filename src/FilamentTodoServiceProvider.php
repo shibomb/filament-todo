@@ -1,6 +1,6 @@
 <?php
 
-namespace Shibomb\FilamentSimpleMemo;
+namespace Shibomb\FilamentTodo;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -10,13 +10,13 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
-use Shibomb\FilamentSimpleMemo\Commands\FilamentSimpleMemoCommand;
-use Shibomb\FilamentSimpleMemo\Testing\TestsFilamentSimpleMemo;
+use Shibomb\FilamentTodo\Commands\FilamentTodoCommand;
+use Shibomb\FilamentTodo\Testing\TestsFilamentTodo;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
+class FilamentTodoServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'filament-simple-memo';
 
@@ -88,7 +88,7 @@ class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentSimpleMemo());
+        Testable::mixin(new TestsFilamentTodo());
     }
 
     protected function getAssetPackageName(): ?string
@@ -114,7 +114,7 @@ class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            FilamentSimpleMemoCommand::class,
+            FilamentTodoCommand::class,
         ];
     }
 
@@ -148,7 +148,7 @@ class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-simple-memo_table',
+            'create_simple_memos_table',
         ];
     }
 }

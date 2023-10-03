@@ -1,10 +1,10 @@
 <?php
 
-namespace Shibomb\FilamentSimpleMemo\Commands;
+namespace Shibomb\FilamentTodo\Commands;
 
 use Illuminate\Console\Command;
 
-class FilamentSimpleMemoCommand extends Command
+class FilamentTodoCommand extends Command
 {
     public $signature = 'filament-simple-memo';
 

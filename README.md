@@ -46,8 +46,8 @@ return [
 ## Usage
 
 ```php
-$filamentSimpleMemo = new Shibomb\FilamentSimpleMemo();
-echo $filamentSimpleMemo->echoPhrase('Hello, Shibomb!');
+$filamentTodo = new Shibomb\FilamentTodo();
+echo $filamentTodo->echoPhrase('Hello, Shibomb!');
 ```
 
 ## Testing

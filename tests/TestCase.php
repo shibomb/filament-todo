@@ -1,6 +1,6 @@
 <?php
 
-namespace Shibomb\FilamentSimpleMemo\Tests;
+namespace Shibomb\FilamentTodo\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
-use Shibomb\FilamentSimpleMemo\FilamentSimpleMemoServiceProvider;
+use Shibomb\FilamentTodo\FilamentTodoServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -27,7 +27,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Shibomb\\FilamentSimpleMemo\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Shibomb\\FilamentTodo\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
@@ -48,7 +48,7 @@ class TestCase extends Orchestra
             SupportServiceProvider::class,
             TablesServiceProvider::class,
             WidgetsServiceProvider::class,
-            FilamentSimpleMemoServiceProvider::class,
+            FilamentTodoServiceProvider::class,
         ];
     }
 

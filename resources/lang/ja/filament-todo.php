@@ -44,16 +44,16 @@ return [
                 'filter' => [
                     'unfinished_only' => '未完了のみ',
                     'published_until' => '公開日が以前',
-                ]
+                ],
             ],
             'form' => [
                 'title' => 'Todo',
                 'description' => 'Description',
                 'status' => 'Status',
                 'is_finished' => [
-                    'helper' => 'Check when <strong>finished.<strong>'
-                ]
+                    'helper' => 'Check when <strong>finished.<strong>',
+                ],
             ],
-        ]
-    ]
+        ],
+    ],
 ];

@@ -44,16 +44,16 @@ return [
                 'filter' => [
                     'unfinished_only' => 'Unfinished only',
                     'published_until' => 'Published until',
-                ]
+                ],
             ],
             'form' => [
                 // 'title' => 'Todo',
                 // 'description' => 'Description',
-                'status' => 'Status'
+                'status' => 'Status',
             ],
             'is_finished' => [
-                'helper' => 'Check when <strong>finished.<strong>'
-            ]
-        ]
-    ]
+                'helper' => 'Check when <strong>finished.<strong>',
+            ],
+        ],
+    ],
 ];

@@ -4,7 +4,6 @@ namespace Shibomb\FilamentTodo\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
@@ -102,7 +101,7 @@ class TodoResource extends Resource
                                 Forms\Components\Toggle::make('is_finished')
                                     ->label(trans('filament-todo::filament-todo.resource.todo.is_finished'))
                                     ->helperText(new HtmlString(trans('filament-todo::filament-todo.help.todo.form.is_finished.helper'))),
-                            ])
+                            ]),
                     ]),
             ]);
     }
@@ -139,7 +138,7 @@ class TodoResource extends Resource
             ->filters([
                 Tables\Filters\Filter::make('unfinished_only')
                     ->label(__('filament-todo::filament-todo.help.todo.list.filter.unfinished_only'))
-                    ->query(fn(Builder $query): Builder => $query->where('is_finished', false))
+                    ->query(fn (Builder $query): Builder => $query->where('is_finished', false))
                     ->default(true),
                 Tables\Filters\Filter::make('published')
                     ->form([
@@ -152,7 +151,7 @@ class TodoResource extends Resource
                         return $query
                             ->when(
                                 $data['published_until'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
                             );
                     }),
 

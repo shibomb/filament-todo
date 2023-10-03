@@ -2,19 +2,22 @@
 
 namespace Shibomb\FilamentTodo\Models;
 
+use Filament\Actions\Concerns\HasLabel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Shibomb\FilamentTodo\Enums\IsFinished;
 
 class Todo extends Model
 {
     use HasFactory;
+    use HasLabel;
 
     /**
      * @var string
      */
-    protected $table = 'todo_todos';
+    protected $table = 'filament_todo_todos';
 
     /**
      * The attributes that are mass assignable.
@@ -51,6 +54,15 @@ class Todo extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'todo_category_id');
+        return $this->belongsTo(Category::class, 'filament_todo_category_id');
     }
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'is_finished' => IsFinished::class,
+    ];
 }

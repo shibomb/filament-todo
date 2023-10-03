@@ -3,27 +3,49 @@
 namespace Shibomb\FilamentTodo\Resources;
 
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
-use Shibomb\FilamentMultiComponentsColumn\Components\MultiComponentsColumn;
+use Filament\Tables\Table;
+use Filament\Infolists;
 use Shibomb\FilamentTodo\Models\Category;
 use Shibomb\FilamentTodo\Resources\CategoryResource\Pages;
+use Shibomb\FilamentTodo\Resources\CategoryResource\RelationManagers;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $slug = 'todo/categories';
+    public static function getPluralLabel(): string
+    {
+        return trans('filament-todo::filament-todo.resource.category.label');
+    }
 
-    protected static ?string $recordTitleAttribute = 'name';
+    public static function getLabel(): string
+    {
+        return trans('filament-todo::filament-todo.resource.category.single');
+    }
 
-    protected static ?string $navigationGroup = 'Todo';
+    public static function getNavigationGroup(): ?string
+    {
+        return config('filament-todo.navigation.category.group') ? trans(config('filament-todo.navigation.category.group')) : false;
+    }
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    public static function getNavigationIcon(): ?string
+    {
+        return config('filament-todo.navigation.category.icon') ?? 'heroicon-o-tag';
+    }
 
-    protected static ?int $navigationSort = 1;
+    public static function getNavigationLabel(): string
+    {
+        return trans('filament-todo::filament-todo.navigation.category.label');
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return config('filament-todo.navigation.category.sort') ?? 1;
+    }
 
     public static function form(Form $form): Form
     {
@@ -32,13 +54,13 @@ class CategoryResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->label(__('filament-todo::filament-todo.category_name'))
+                            ->label(__('filament-todo::filament-todo.resource.category.name'))
                             ->required(),
                         Forms\Components\ColorPicker::make('color')
-                            ->label(__('filament-todo::filament-todo.color'))
+                            ->label(__('filament-todo::filament-todo.resource.category.color'))
                             ->required(),
                         Forms\Components\TextInput::make('sort_order')
-                            ->label(__('filament-todo::filament-todo.sort_order'))
+                            ->label(__('filament-todo::filament-todo.resource.category.sort_order'))
                             ->required()
                             ->numeric()
                             ->minValue(0)
@@ -51,20 +73,28 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                MultiComponentsColumn::make('name')
-                    ->label(__('filament-todo::filament-todo.category_name'))
+                Tables\Columns\TextColumn::make('name')
+                    ->label(trans('filament-todo::filament-todo.resource.category.name'))
                     ->searchable()
-                    ->sortable()
-                    ->components([
-                        Tables\Columns\ColorColumn::make('color'),
-                        Tables\Columns\TextColumn::make('name'),
-                    ]),
+                    ->sortable(),
+                Tables\Columns\ColorColumn::make('color')
+                    ->label(trans('filament-todo::filament-todo.resource.category.color')),
                 Tables\Columns\TextColumn::make('sort_order')
-                    ->label(__('filament-todo::filament-todo.sort_order'))
+                    ->label(trans('filament-todo::filament-todo.resource.category.sort_order'))
                     ->sortable(),
             ])
             ->filters([
                 //
+            ])
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ])
             ->defaultSort('sort_order');
     }
@@ -72,7 +102,7 @@ class CategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\TodosRelationManager::class,
         ];
     }
 
@@ -81,17 +111,8 @@ class CategoryResource extends Resource
         return [
             'index' => Pages\ListCategories::route('/'),
             'create' => Pages\CreateCategory::route('/create'),
+            // 'view' => Pages\ViewCategory::route('/{record}'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
-    }
-
-    public static function getPluralModelLabel(): string
-    {
-        return __('filament-todo::filament-todo.categories');
-    }
-
-    public static function getModelLabel(): string
-    {
-        return __('filament-todo::filament-todo.category');
     }
 }

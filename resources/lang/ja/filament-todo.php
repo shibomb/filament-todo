@@ -2,15 +2,44 @@
 
 // translations for Shibomb/FilamentTodo
 return [
+    'enums' => [
+        'is_finished' => [
+            'unfinished' => '未完了',
+            'finished' => '完了',
+        ],
+    ],
     'navigation' => [
-        'group' => 'ドキュメント',
-        'label' => 'To Do',
+        'category' => [
+            'group' => 'ToDo',
+            'label' => 'カテゴリー',
+        ],
+        'todo' => [
+            'group' => 'ToDo',
+            'label' => 'ToDo',
+        ],
     ],
     'resource' => [
-        'label' => 'To Do',
-        'single' => 'To Do',
-        'title' => 'タイトル',
-        'content' => 'コンテンツ',
+        'category' => [
+            'label' => 'カテゴリー',
+            'single' => 'カテゴリー',
+
+            'name' => 'カテゴリー名',
+            'color' => 'カラー',
+            'sort_order' => '並び順',
+        ],
+        'todo' => [
+            'label' => 'ToDos',
+            'single' => 'ToDo',
+
+            'title' => 'タイトル',
+            'content' => 'コンテンツ',
+            'image' => 'イメージ',
+            'published_at' => '公開日',
+            'is_finished' => '完了',
+
+            'unfinished_only' => '未完了のみ',
+            'published_until' => '公開日が以前',
+        ]
     ],
 ];
 

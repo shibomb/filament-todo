@@ -2,15 +2,43 @@
 
 // translations for Shibomb/FilamentTodo
 return [
+    'enums' => [
+        'is_finished' => [
+            'unfinished' => 'Unfinished',
+            'finished' => 'Finished',
+        ],
+    ],
     'navigation' => [
-        'group' => 'Documents',
-        'label' => 'To Do',
+        'category' => [
+            'group' => 'ToDo',
+            'label' => 'Category',
+        ],
+        'todo' => [
+            'group' => 'ToDo',
+            'label' => 'ToDo',
+        ],
     ],
     'resource' => [
-        'label' => 'To Do',
-        'single' => 'To Do',
-        'title' => 'Title',
-        'content' => 'Content',
+        'category' => [
+            'label' => 'Categories',
+            'single' => 'Category',
+            'name' => 'Name',
+            'color' => 'Color',
+            'sort_order' => 'Sort Order',
+        ],
+        'todo' => [
+            'label' => 'ToDos',
+            'single' => 'ToDo',
+
+            'title' => 'Title',
+            'content' => 'Content',
+            'image' => 'Image',
+            'published_at' => 'Published at',
+            'is_finished' => 'Finished',
+
+            'unfinished_only' => 'Unfinished only',
+            'published_until' => 'Published until',
+        ]
     ],
 ];
 

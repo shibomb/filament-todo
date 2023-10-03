@@ -13,7 +13,7 @@ class Category extends Model
     /**
      * @var string
      */
-    protected $table = 'todo_categories';
+    protected $table = 'filament_todo_categories';
 
     /**
      * @var array<int, string>
@@ -26,6 +26,6 @@ class Category extends Model
 
     public function todos(): HasMany
     {
-        return $this->hasMany(Todo::class, 'todo_category_id', 'id');
+        return $this->hasMany(Todo::class, 'filament_todo_category_id', 'id');
     }
 }

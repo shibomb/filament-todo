@@ -4,6 +4,7 @@ namespace Shibomb\FilamentTodo;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Shibomb\FilamentTodo\Resources\CategoryResource;
 use Shibomb\FilamentTodo\Resources\TodoResource;
 
 class FilamentTodoPlugin implements Plugin
@@ -17,6 +18,7 @@ class FilamentTodoPlugin implements Plugin
     {
         //
         $panel->resources([
+            CategoryResource::class,
             TodoResource::class,
         ]);
     }

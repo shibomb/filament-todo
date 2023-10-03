@@ -148,7 +148,7 @@ class FilamentTodoServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_todos_table',
+            'create_filament_todos_table',
         ];
     }
 }

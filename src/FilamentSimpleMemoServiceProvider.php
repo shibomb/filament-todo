@@ -10,11 +10,11 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use Shibomb\FilamentSimpleMemo\Commands\FilamentSimpleMemoCommand;
+use Shibomb\FilamentSimpleMemo\Testing\TestsFilamentSimpleMemo;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Shibomb\FilamentSimpleMemo\Commands\FilamentSimpleMemoCommand;
-use Shibomb\FilamentSimpleMemo\Testing\TestsFilamentSimpleMemo;
 
 class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
 {
@@ -80,7 +80,7 @@ class FilamentSimpleMemoServiceProvider extends PackageServiceProvider
 
         // Handle Stubs
         if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+            foreach (app(Filesystem::class)->files(__DIR__.'/../stubs/') as $file) {
                 $this->publishes([
                     $file->getRealPath() => base_path("stubs/filament-simple-memo/{$file->getFilename()}"),
                 ], 'filament-simple-memo-stubs');

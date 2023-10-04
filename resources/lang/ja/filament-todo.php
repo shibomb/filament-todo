@@ -49,9 +49,9 @@ return [
             'form' => [
                 'title' => 'Todo',
                 'description' => 'Description',
-                'status' => 'Status',
+                'status' => 'ステータス',
                 'is_finished' => [
-                    'helper' => 'Check when <strong>finished.<strong>',
+                    'helper' => '<strong>完了<strong>したらチェックしてください。',
                 ],
             ],
         ],

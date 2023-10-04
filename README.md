@@ -1,4 +1,4 @@
-# This is my package filament-todo
+# Filament ToDo
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shibomb/filament-todo.svg?style=flat-square)](https://packagist.org/packages/shibomb/filament-todo)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/shibomb/filament-todo/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/shibomb/filament-todo/actions?query=workflow%3Arun-tests+branch%3A3.x)
@@ -6,8 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/shibomb/filament-todo.svg?style=flat-square)](https://packagist.org/packages/shibomb/filament-todo)
 
 
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+The simple todo manager for FilamentPHP Admin Dashboard.
 
 ## Installation
 
@@ -24,37 +23,39 @@ php artisan vendor:publish --tag="filament-todo-migrations"
 php artisan migrate
 ```
 
+Finally reigster the plugin on `/app/Providers/Filament/AdminPanelProvider.php`
+
+```php
+$panel->plugin(\Shibomb\FilamentTodo\FilamentTodoPlugin::make())
+```
+
+
+### option : config 
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="filament-todo-config"
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-todo-views"
-```
-
 This is the contents of the published config file:
 
 ```php
 return [
+    'navigation' => [
+        'category' => [
+            'group' => 'filament-todo::filament-todo.navigation.category.group', // set false to no-group
+            'icon' => 'heroicon-o-tag',
+            'sort' => 2,
+        ],
+        'todo' => [
+            'group' => 'filament-todo::filament-todo.navigation.todo.group', // set false to no-group
+            'icon' => 'heroicon-o-document-check',
+            'sort' => 1,
+        ],
+    ],
 ];
 ```
 
-## Usage
-
-```php
-$filamentTodo = new Shibomb\FilamentTodo();
-echo $filamentTodo->echoPhrase('Hello, Shibomb!');
-```
-
-## Testing
-
-```bash
-composer test
-```
 
 ## Changelog
 

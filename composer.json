@@ -1,10 +1,12 @@
 {
     "name": "shibomb/filament-todo",
-    "description": "This is my package filament-todo",
+    "description": "The simple todo manager for FilamentPHP Admin Dashboard.",
     "keywords": [
         "shibomb",
         "laravel",
-        "filament-todo"
+        "filament-todo",
+        "todo",
+        "filament"
     ],
     "homepage": "https://github.com/shibomb/filament-todo",
     "support": {
